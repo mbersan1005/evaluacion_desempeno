@@ -1,0 +1,30 @@
+<odoo>
+    <record id="view_evaluacion_form" model="ir.ui.view">
+        <field name="name">evaluacion.desempeno.form</field>
+        <field name="model">evaluacion.desempeno</field>
+        <field name="arch" type="xml">
+            <form string="Evaluación de Desempeño">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="employee_id"/>
+                        <field name="evaluation_date"/>
+                        <field name="score"/>
+                        <field name="state"/>
+                        <field name="comments"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_evaluacion_root" name="Evaluaciones" sequence="10" />
+    <menuitem id="menu_evaluacion_desempeno" name="Evaluaciones de Desempeño"
+              parent="menu_evaluacion_root" action="action_evaluacion_desempeno" sequence="20"/>
+    
+    <record id="action_evaluacion_desempeno" model="ir.actions.act_window">
+        <field name="name">Evaluaciones de Desempeño</field>
+        <field name="res_model">evaluacion.desempeno</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

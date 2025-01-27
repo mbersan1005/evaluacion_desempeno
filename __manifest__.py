@@ -4,8 +4,8 @@
     'summary': 'Gestión de evaluación de desempeño',
     'description': 'Este módulo gestiona las evaluaciones de desempeño de los empleados.',
     'author': 'Miguel Ángel Bernal Sánchez',
-    'category': 'Tools',
-    'depends': ['base'],
+    'category': 'Human Resources',
+    'depends': ['base', 'hr'],
     'icon': '/evaluacion_desempeno/static/description/icono.png',
     'data': [
         'security/ir.model.access.csv', # Control de acceso
