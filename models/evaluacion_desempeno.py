@@ -1,10 +1,11 @@
 from odoo import models, fields, api
 
-class evaluacion_desempeno(models.Model):
+class EvaluacionDesempeno(models.Model):
     _name = 'evaluacion.desempeno'
-    _descripcion = 'Desempeño del Empleado'
+    _description = 'Desempeño del Empleado'
 
-    name = fields.Char(string='Evaluación', required = True)
+    name = fields.Char(string='Evaluación', required=True)
+    employee_id = fields.Many2one('hr.employee', string="Empleado", required=True)
     fecha_evaluacion = fields.Date(string='Fecha de Evaluación', required=True)
     comentarios = fields.Text(string='Comentarios Evaluador')
     puntuacion = fields.Integer(string='Puntuación', required=True, default=1)
@@ -14,8 +15,8 @@ class evaluacion_desempeno(models.Model):
         ('finalizado', 'Finalizado')
     ], string="Estado", default='pendiente')
 
-    @api.constrains('score')
-    def _check_score(self):
+    @api.constrains('puntuacion') 
+    def _check_puntuacion(self):
         for record in self:
-            if record.score < 1 or record.score > 10:
-                raise ValueError("La Puntuación ha de ser entre 1 y 10.")
+            if record.puntuacion < 1 or record.puntuacion > 10:
+                raise ValueError("La puntuación debe estar entre 1 y 10.")

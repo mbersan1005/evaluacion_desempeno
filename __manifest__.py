@@ -1,16 +1,19 @@
 {
-    'name': 'Evaluación de desempeños',
+    'name': 'Evaluación de Desempeño',
     'version': '1.0',
-    'summary': 'Gestión de evaluación de desempeño',
-    'description': 'Este módulo gestiona las evaluaciones de desempeño de los empleados.',
+    'summary': 'Gestión de evaluaciones de desempeño de empleados',
+    'description': 'Este módulo permite gestionar las evaluaciones de desempeño de los empleados, asignando puntuaciones, comentarios y estados.',
     'author': 'Miguel Ángel Bernal Sánchez',
     'category': 'Human Resources',
-    'depends': ['base', 'hr'],
-    'icon': '/evaluacion_desempeno/static/description/icono.png',
+    'license': 'LGPL-3',
+    'depends': ['base', 'hr'],  
     'data': [
-        'security/ir.model.access.csv', # Control de acceso
-        'views/evaluacion_desempeno_views.xml', # Vista del módulo
+        'security/ir.model.access.csv',  
+        'views/evaluacion_views.xml',  
     ],
+    'assets': {},
     'installable': True,
     'application': True,
+    'auto_install': False,
+    'images': ['static/description/icon.png'],  
 }

@@ -8,23 +8,37 @@
                     <group>
                         <field name="name"/>
                         <field name="employee_id"/>
-                        <field name="evaluation_date"/>
-                        <field name="score"/>
-                        <field name="state"/>
-                        <field name="comments"/>
+                        <field name="fecha_evaluacion"/>
+                        <field name="puntuacion"/>
+                        <field name="estado"/>
+                        <field name="comentarios"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    <record id="view_evaluacion_tree" model="ir.ui.view">
+        <field name="name">evaluacion.desempeno.tree</field>
+        <field name="model">evaluacion.desempeno</field>
+        <field name="arch" type="xml">
+            <tree string="Evaluaciones">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="fecha_evaluacion"/>
+                <field name="puntuacion"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
     <menuitem id="menu_evaluacion_root" name="Evaluaciones" sequence="10" />
     <menuitem id="menu_evaluacion_desempeno" name="Evaluaciones de Desempeño"
               parent="menu_evaluacion_root" action="action_evaluacion_desempeno" sequence="20"/>
-    
+
     <record id="action_evaluacion_desempeno" model="ir.actions.act_window">
         <field name="name">Evaluaciones de Desempeño</field>
         <field name="res_model">evaluacion.desempeno</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>
