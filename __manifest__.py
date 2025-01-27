@@ -1,8 +1,8 @@
 {
-    'name': 'Gestión de vehículos',
+    'name': 'Evaluación de desempeños',
     'version': '1.0',
-    'summary': 'Gestión de vehículos de la empresa',
-    'description': 'Este módulo gestiona los vehículos disponibles en la empresa.',
+    'summary': 'Gestión de evaluación de desempeño',
+    'description': 'Este módulo gestiona las evaluaciones de desempeño de los empleados.',
     'author': 'Miguel Ángel Bernal Sánchez',
     'category': 'Tools',
     'depends': ['base'],
