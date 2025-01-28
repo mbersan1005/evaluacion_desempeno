@@ -2,7 +2,7 @@
     <record id="action_evaluacion_desempeno" model="ir.actions.act_window">
         <field name="name">Evaluaciones de Desempeño</field>
         <field name="res_model">evaluacion.desempeno</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,form</field>
     </record>
 
     <record id="view_evaluacion_form" model="ir.ui.view">
@@ -24,21 +24,47 @@
         </field>
     </record>
 
-    <record id="view_evaluacion_tree" model="ir.ui.view">
-        <field name="name">evaluacion.desempeno.tree</field>
+    <record id="view_evaluacion_kanban" model="ir.ui.view">
+        <field name="name">evaluacion.desempeno.kanban</field>
         <field name="model">evaluacion.desempeno</field>
         <field name="arch" type="xml">
-            <tree string="Evaluaciones">
-                <field name="name"/>
-                <field name="employee_id"/>
-                <field name="fecha_evaluacion"/>
-                <field name="puntuacion"/>
-                <field name="estado"/>
-            </tree>
+            <kanban default_group_by="estado" class="o_kanban_small_column">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+
+                            <div class="o_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div>
+                                    <span>Empleado: </span>
+                                    <field name="employee_id"/>
+                                </div>
+                                <div>
+                                    <span>Fecha: </span>
+                                    <field name="fecha_evaluacion"/>
+                                </div>
+                                <div>
+                                    <span>Puntuación: </span>
+                                    <field name="puntuacion"/>
+                                </div>
+                                <div>
+                                    <span>Estado: </span>
+                                    <field name="estado"/>
+                                </div>
+                                <div>
+                                    <span>Comentarios: </span>
+                                    <field name="comentarios"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 
     <menuitem id="menu_evaluacion_root" name="Evaluaciones" sequence="10" />
 
-    <menuitem id="menu_evaluacion_desempeno" name="Evaluaciones de Desempeño" parent="menu_evaluacion_root" action="action_evaluacion_desempeno" sequence="20"/>
+    <menuitem id="menu_evaluacion_desempeno" name="Evaluaciones de Desempeño" 
+              parent="menu_evaluacion_root" action="action_evaluacion_desempeno" sequence="20"/>
 </odoo>
