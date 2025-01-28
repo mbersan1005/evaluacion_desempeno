@@ -7,13 +7,17 @@
     'category': 'Human Resources',
     'license': 'LGPL-3',
     'depends': ['base', 'hr'],  
+        'icon': '/evaluacion_desempeno/static/description/icono.png',
     'data': [
         'security/ir.model.access.csv',  
         'views/evaluacion_desempeno_views.xml',  
     ],
-    'assets': {},
+    'assets': {
+        'web.assets_backend': [
+            '/evaluacion_desempeno/static/src/css/styles.css',
+        ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,
-    'images': ['static/description/icono.png'],  
 }
