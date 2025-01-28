@@ -1,0 +1,35 @@
+.evaluacion_kanban {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 280px;
+    min-height: 140px;
+}
+
+.kanban_header {
+    background-color: #8d03dd;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.kanban_body {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.kanban_body div {
+    margin-bottom: 5px;
+}
+
+.kanban_body .imp {
+    font-weight: bold;
+}

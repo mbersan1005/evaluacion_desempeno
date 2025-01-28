@@ -31,30 +31,16 @@
             <kanban default_group_by="estado" class="o_kanban_small_column">
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
-
-                            <div class="o_kanban_details">
+                        <div class="evaluacion_kanban">
+                            <div class="kanban_header">
                                 <strong><field name="name"/></strong>
-                                <div>
-                                    <span>Empleado: </span>
-                                    <field name="employee_id"/>
-                                </div>
-                                <div>
-                                    <span>Fecha: </span>
-                                    <field name="fecha_evaluacion"/>
-                                </div>
-                                <div>
-                                    <span>Puntuación: </span>
-                                    <field name="puntuacion"/>
-                                </div>
-                                <div>
-                                    <span>Estado: </span>
-                                    <field name="estado"/>
-                                </div>
-                                <div>
-                                    <span>Comentarios: </span>
-                                    <field name="comentarios"/>
-                                </div>
+                            </div>
+                            <div class="kanban_body">
+                                <div><span class="imp">Empleado: </span><field name="employee_id"/></div>
+                                <div><span class="imp">Fecha: </span><field name="fecha_evaluacion"/></div>
+                                <div><span class="imp">Puntuación: </span><field name="puntuacion"/></div>
+                                <div><span class="imp">Estado: </span><field name="estado"/></div>
+                                <div><span class="imp">Comentarios: </span><field name="comentarios"/></div>
                             </div>
                         </div>
                     </t>
@@ -63,7 +49,7 @@
         </field>
     </record>
 
-    <menuitem id="menu_evaluacion_root" name="Evaluaciones" sequence="10" />
+    <menuitem id="menu_evaluacion_root" name="Evaluaciones" sequence="10"/>
 
     <menuitem id="menu_evaluacion_desempeno" name="Evaluaciones de Desempeño" 
               parent="menu_evaluacion_root" action="action_evaluacion_desempeno" sequence="20"/>
