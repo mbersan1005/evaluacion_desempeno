@@ -9,11 +9,11 @@
     'depends': ['base', 'hr'],  
     'data': [
         'security/ir.model.access.csv',  
-        'views/evaluacion_views.xml',  
+        'views/evaluacion_desempeno_views.xml',  
     ],
     'assets': {},
     'installable': True,
     'application': True,
     'auto_install': False,
-    'images': ['static/description/icon.png'],  
+    'images': ['static/description/icono.png'],  
 }

@@ -4,7 +4,7 @@ class EvaluacionDesempeno(models.Model):
     _name = 'evaluacion.desempeno'
     _description = 'Desempeño del Empleado'
 
-    name = fields.Char(string='Evaluación', required=True)
+    name = fields.Char(string='Título Evaluación', required=True)
     employee_id = fields.Many2one('hr.employee', string="Empleado", required=True)
     fecha_evaluacion = fields.Date(string='Fecha de Evaluación', required=True)
     comentarios = fields.Text(string='Comentarios Evaluador')
@@ -15,8 +15,10 @@ class EvaluacionDesempeno(models.Model):
         ('finalizado', 'Finalizado')
     ], string="Estado", default='pendiente')
 
-    @api.constrains('puntuacion') 
-    def _check_puntuacion(self):
+    @api.onchange('puntuacion')
+    def _onchange_puntuacion(self):
         for record in self:
-            if record.puntuacion < 1 or record.puntuacion > 10:
-                raise ValueError("La puntuación debe estar entre 1 y 10.")
+            if record.puntuacion < 1:
+                record.puntuacion = 1
+            elif record.puntuacion > 10:
+                record.puntuacion = 10
